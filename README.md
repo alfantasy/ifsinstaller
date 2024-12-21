@@ -1,4 +1,2 @@
-**_InfoSecurity Installer Program PE (PostInstallation-Environment). InfoSecurity установщик программ после-инсталляционного окружения._** 
-# RU
-## IFS Installer. 
+# RU. **_Установщик программ после-инсталляционного окружения_**
 Универсальный инсталлятор программного обеспечения.
