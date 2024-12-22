@@ -7,7 +7,7 @@
 
 IFSInstaller в разы упрощает установку Windows, тем, что располагает программное обеспечение на ПК, автоматически развертывая его (если это возможно).
 
-**Основной функционал:**
+### Основной функционал
 1. Установка программ при помощи он-лайн скачивания определенных пакетов
 _- Программа при своем запуске автоматически скачивает (и обновляет) конфигурацию, где находятся ссылки на скачивание_
 
@@ -25,7 +25,7 @@ This script helps to quickly install the necessary programs, and even immediatel
 
 IFSInstaller significantly simplifies the installation of Windows by having the software on the PC, automatically deploying it (if possible).
 
-**The main functionality**
+### The main functionality
 1. Installing programs by downloading certain packages online
 
 _- When the program starts, it automatically downloads (and updates) the configuration where the download links are located._
