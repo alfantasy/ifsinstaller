@@ -1,9 +1,5 @@
 ![InfoSecurity installer program PE](https://github.com/user-attachments/assets/b60c8934-5fca-418f-93b2-f79098963b05)
 
--- Picture #1. IFS INPE
-
-
-
 # IFSInstaller. RU. ***Установщик программ после-инсталляционного окружения***
 | Универсальный инсталлятор программного обеспечения. Он разработан на Batch и предполагает свой запуск на операционных системах Windows.
 
