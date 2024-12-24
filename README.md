@@ -1,7 +1,7 @@
 ![InfoSecurity installer program PE](https://github.com/user-attachments/assets/b60c8934-5fca-418f-93b2-f79098963b05)
 
 # IFSInstaller. RU. ***Установщик программ после-инсталляционного окружения***
-| Универсальный инсталлятор программного обеспечения. Он разработан на Batch и предполагает свой запуск на операционных системах Windows.
+| Универсальный инсталлятор программного обеспечения. Он разработан на Python и предполагает свой запуск на операционных системах Windows.
 
 Данный скрипт помогает быстро установить необходимые программы, и даже сразу, пакеты программ, создавая определенные совокупности ПО.
 
@@ -19,7 +19,7 @@ _- Предполагает предварительное скачивание 
 
 
 # IFSInstaller. EN. ***Installer program PE***
-| Universal software installer. It is developed on Batch and assumes its launch on Windows operating systems.
+| Universal software installer. It is developed on Python and assumes its launch on Windows operating systems.
 
 This script helps to quickly install the necessary programs, and even immediately, software packages, creating certain software packages.
 
