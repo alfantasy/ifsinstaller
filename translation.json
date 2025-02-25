@@ -2,8 +2,11 @@
 	"en": {
 		"back": "0: Back",
 		"choice_lang": "Select a language: 1.RU; 2. EN\n",
+		"coming_soon": "It's coming out soon... Follow the updates in the Telegram channel: @ainfsy",
 		"complete_disable_conf": "The configuration update is disabled. Press any button...",
+		"complete_disable_steps": "The steps installation are disabled. Press any button...",
 		"complete_enable_conf": "The configuration update is enabled. Press any button...",
+		"complete_enable_steps": "The steps installation are enabled. Press any button...",
 		"complete_update_trans": "The translation file has been updated. Press any button...",
 		"complete_upload_conf": "The configuration update is finished. Press any button...",
 		"contenter": "Press Enter to continue...    ",
@@ -23,6 +26,7 @@
 		"menu": "Select the required parameter:\n1: Download and install necessary programs (online)   \n2: Installing programs from the PE IFS package (offline)        \n3: Help\n4: Program Settings\n          \n0: Exit\n",
 		"off_update": "You have disabled the automatic configuration update.",
 		"online_install_programs_main": "Select the category of the downloaded software:\n1: Browsers\n2: Archivers\n3: Text editors and IDEs\n4: Media Players\n5: Audio players\n\n\n0: Back\n",
+		"save_config": "The settings were saved successfully automatically.",
 		"select_program": "Select the program you need:",
 		"settings_text_main": "Choose what you need to do:\n1: Change the language\n2: Update the configuration file\n3: Enable/Disable automatic updating of the configuration file\n4: Updating the translator file.\n5: Enable/Disable the installation steps\n\n\n0: Back\n",
 		"settings_title": "Program settings. Edit carefully!",
@@ -43,13 +47,18 @@
 		"thanks_usage": "Thanks for using IPPE by IFS! <3",
 		"types": "Type...",
 		"upload_conf": "Load the configuration if there is an Internet connection...",
+		"wrong_argument": "The parameters are specified incorrectly. You have entered:",
+		"wrong_argument0": "Check the entered parameters, if you need help, enter ifs -h",
 		"wrong_choice": "Wrong choice. Please select again..."
 	},
 	"ru": {
 		"back": "0: Назад",
 		"choice_lang": "Выберите язык: 1. RU; 2.EN\n",
+		"coming_soon": "Скоро выйдет... Следите за обновлениями в Telegram канале: @ainfsy",
 		"complete_disable_conf": "Автоматическое обновление конфигурации выключено. Нажмите любую кнопку...",
+		"complete_disable_steps": "Этапы установки отключены.",
 		"complete_enable_conf": "Автоматическое обновление конфигурации включено. Нажмите любую кнопку...",
+		"complete_enable_steps": "Этапы установки включены.",
 		"complete_update_trans": "Файл перевода обновлен. Нажмите любую кнопку...",
 		"complete_upload_conf": "Обновление конфигурации закончено. Нажмите любую кнопку...",
 		"contenter": "Нажмите Enter, чтобы продолжить...    ",
@@ -69,6 +78,7 @@
 		"menu": "Выберите необходимый параметр:\n1: Скачивание и установка необходимых программ (онлайн)   \n2: Установка программ из пакета PE IFS (оффлайн)        \n3: Справка\n4: Настройки программы\n          \n0: Выйти      \n",
 		"off_update": "Вы отключили автообновление конфигурации.",
 		"online_install_programs_main": "Выберите категорию скачиваемого ПО:\n1: Браузеры\n2: Архиваторы\n3: Текстовые редакторы и IDE\n4: Медиаплееры\n5: Аудиопроигрыватели\n\n\n0: Назад",
+		"save_config": "Настройки успешно сохранены автоматически.",
 		"select_program": "Выберите необходимую Вам программу:",
 		"settings_text_main": "Выберите, что нужно сделать:\n1: Изменить язык\n2: Обновить файл конфигурации\n3: Включить/Отключить автоматическое обновление файла конфигурации\n4: Обновление файла-переводчика.\n5: Включить/Отключить этапы установки\n\n\n0: Назад\n",
 		"settings_title": "Настройки программы. Редактируйте внимательно!",
@@ -89,6 +99,8 @@
 		"thanks_usage": "Спасибо за использование IPPE by IFS! <3",
 		"types": "Ввод...",
 		"upload_conf": "Подгружаем конфигурацию при наличии интернет-соединения...",
+		"wrong_argument": "Неправильны указаны параметры. Вы ввели: ",
+		"wrong_argument0": "Проверьте введенные параметры, если нужна справка введите ifs -h",
 		"wrong_choice": "Неверный выбор. Пожалуйста, выберите снова..."
 	}
 }

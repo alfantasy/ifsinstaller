@@ -98,6 +98,16 @@ translations = {
         "step4_cancel_install": "Установка была отклонена пользователем. Нажмите любую кнопку для возвращения...",
         "step5_to_install_complete": "Установщик запущен или установка уже была завершена... Чтобы вернуться на главную, нажмите любую кнопку...",
         "step0_error": "IPPE выдал ошибку. Пожалуйста, попробуйте ещё раз...",
+
+        "complete_disable_steps": "Этапы установки отключены.",
+        "complete_enable_steps": "Этапы установки включены.",
+
+        "save_config": "Настройки успешно сохранены автоматически.",
+
+        "coming_soon": "Скоро выйдет... Следите за обновлениями в Telegram канале: @ainfsy",
+
+        "wrong_argument": "Неправильны указаны параметры. Вы ввели: ",
+        "wrong_argument0": "Проверьте введенные параметры, если нужна справка введите ifs -h",
     },
     "en": {
         "help_message": '''The first option in the initial menu is "Download and install necessary programs (online):
@@ -199,6 +209,14 @@ When switching to offline installation mode, scanning occurs automatically, but 
         "step4_cancel_install": "The installation was rejected by the user. Press any button to return...",
         "step5_to_install_complete": "The installer is running or the installation has already been completed... To return to the main page, press any button...",
         "step0_error": "IPPE returned an error. Please try again...",
+        "save_config": "The settings were saved successfully automatically.",
+        "complete_disable_steps": "The steps installation are disabled. Press any button...",
+        "complete_enable_steps": "The steps installation are enabled. Press any button...",
+
+        "coming_soon": "It's coming out soon... Follow the updates in the Telegram channel: @ainfsy",
+
+        "wrong_argument": "The parameters are specified incorrectly. You have entered:",
+        "wrong_argument0": "Check the entered parameters, if you need help, enter ifs -h",
     }
 }
 

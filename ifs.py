@@ -91,6 +91,17 @@ def help():
     if choice == '' or choice == None or choice != '':
         menu()
 
+def offline_install_programs():
+    clear()
+    print('\033[34m======================= Installer Program PE by InfoSecurity - Offline =======================')
+    print('')
+    print(f'{qe}94m{t("coming_soon")}')
+    print('')
+    print('\033[34m======================= Installer Program PE by InfoSecurity - Offline =======================')
+    choice = input(t('contenter'))
+    if choice == '' or choice == None or choice != '':
+        menu()
+
 def online_install_programs():
     clear()
     print('\033[34m======================= Installer Program PE by InfoSecurity - Online =======================')
@@ -118,7 +129,6 @@ def online_install_programs():
         except ValueError:
             logger.info(f'{tags["info"]} Внезапность неправильного ключа.')
             logger.exception(f'{tags["error"]} Вывод исключения.')
-
 
 def step_1_install(url, name, args):
     print(f'{qe}94m ' + t("step1_to_install") + f' {name}')
@@ -172,6 +182,7 @@ def step_3_install(name, args):
         else:
             subprocess.call(f"installer.exe {args}")
         time.sleep(2)
+        os.remove('installer.exe')
         step_choice1 = input(f'{qe}96m {t("step5_to_install_complete")}')                    
         if step_choice1 == '' or step_choice1 == None or step_choice1 != '':
             online_install_programs()    
@@ -189,6 +200,30 @@ def step_3_install(name, args):
                 online_install_programs()
             return 
 
+def nosteps_install(url, name, args):
+    print(f'{qe}94m ' + t("step1_to_install") + f' {name}')
+    wget.download(url, 'installer.exe')
+    print(f'\n{qe}94m ' + t("step1.0_to_install"))
+    print(f'{qe}94m ' + t("step2_to_install") + args)
+    print(f'{qe}94m ' + t("step2.0_to_install"))
+    step_choice = input(f'{qe}96m {t("step3_to_install")}' + ' ')
+    if 'д' in step_choice.lower() or 'y' in step_choice.lower():
+        if '/none' in args.lower():
+            subprocess.call("installer.exe")
+        else:
+            subprocess.call(f"installer.exe {args}")
+        time.sleep(2)
+        os.remove('installer.exe')
+        step_choice1 = input(f'{qe}96m {t("step5_to_install_complete")}')                    
+        if step_choice1 == '' or step_choice1 == None or step_choice1 != '':
+            online_install_programs()    
+    elif 'н' in step_choice.lower() or 'n' in step_choice.lower():
+        step_choice = input(f'{qe}96m {t("step4_cancel_install")}' + ' ')
+        if step_choice == '' or step_choice == None or step_choice != '':
+            online_install_programs()
+    else:
+        nosteps_install(url, name, args)
+
 def select_program_and_install(category=None, indexing=None):
     clear()
     if os.path.exists('installer.exe'):
@@ -198,7 +233,9 @@ def select_program_and_install(category=None, indexing=None):
         silentArgs = config['programs'][category][indexing-1]["silentArgs"]
         name_program = config['programs'][category][indexing-1]["name"]
         if settings['dont_steps'] == "no":
-            step_1_install(url_program, name_program, silentArgs)                       
+            step_1_install(url_program, name_program, silentArgs)     
+        else:                  
+            nosteps_install(url_program, name_program, silentArgs)
 
 def select_category_online(category=None):
     clear()
@@ -267,14 +304,14 @@ def settings_ippe():
         if choice_lang == "1":
             settings['language'] = 'ru'
             if save_settings():
-                print('Save.')
+                print(f'{qe}97m {t("save_config")}')
             else:
                 print('Error. See log.')
             settings_ippe()
         elif choice_lang == "2":
             settings['language'] = 'en'
             if save_settings():
-                print('Save.')
+                print(f'{qe}97m {t("save_config")}')
             else:
                 print('Error. See log.')
             settings_ippe()
@@ -291,7 +328,7 @@ def settings_ippe():
         if settings['autoupdate_conf'] == 'yes':
             settings['autoupdate_conf'] = 'no'
             if save_settings():
-                print('Save.')
+                print(f'{qe}97m {t("save_config")}')
             print('\n' + f'{qe}97m' + t("complete_disable_conf"))     
             aint = input()
             if aint == '' or aint == None or aint != '':
@@ -299,7 +336,7 @@ def settings_ippe():
         else:
             settings['autoupdate_conf'] = 'yes'
             if save_settings():
-                print('Save.')
+                print(f'{qe}97m {t("save_config")}')
             print('\n' + f'{qe}97m' + t("complete_enable_conf"))
         aint = input()
         if aint == '' or aint == None or aint != '':
@@ -313,8 +350,21 @@ def settings_ippe():
         print('\n' + f'{qe}97m' + t("complete_update_trans"))     
         aint = input()
         if aint == '' or aint == None or aint != '':
-            settings_ippe()         
-
+            settings_ippe()    
+    elif choice == "5":
+        if settings['dont_steps'] == 'no':
+            settings['dont_steps'] = 'yes'
+            if save_settings():
+                print(f'{qe}97m {t("save_config")}')
+            print(f'{qe}97m' + t("complete_disable_steps"))                        
+        else:
+            settings['dont_steps'] = 'no'
+            if save_settings():
+                print(f'{qe}97m{t("save_config")}')
+            print(f'{qe}97m' + t("complete_enable_steps"))
+        aint = input()
+        if aint == '' or aint == None or aint != '':
+            settings_ippe()
 
 def menu():
     clear()
@@ -325,7 +375,11 @@ def menu():
     if choice == '1':
         online_install_programs()
     elif choice == '2':
-        print(...)
+        clear()
+        print(f'{qe}96m{t("coming_soon")}')
+        choice = input(t("contenter"))
+        if choice == '' or choice == None or choice != '':
+            menu()
     elif choice == '3':
         help()
     elif choice == '4':
@@ -346,12 +400,10 @@ def menu():
 if len(sys.argv) > 1:
     if sys.argv[1] == '-h' or sys.argv[1] == '-help':
         print(t("help_console"))
-        a = input(t("help_console"))
-        if a == '' or a == None or a != '':
-            try:
-                exit()
-            except SystemExit:
-                logger.info(f'\n{tags["info"]} Пользователь завершил работу программы.')  
+        try:
+            exit()
+        except SystemExit:
+            ... 
     elif sys.argv[1] == '-oInstall':
         if len(sys.argv) == 3:
             if sys.argv[2] == '-noUpdate':
@@ -376,6 +428,30 @@ if len(sys.argv) > 1:
         with open('config.json', 'r') as f:
             content = f.read()
             config = json.loads(content)
+    elif sys.argv[1] == '-ofInstall':
+        if len(sys.argv) == 3:
+            if sys.argv[2] == '-noUpdate':
+                print(f"{qe}42m" + t("off_update"))
+            else:
+                if settings['autoupdate_conf'] == 'yes':
+                    print(f"{qe}42m======================= " + t("upload_conf") + " =======================")
+                    if os.path.exists('config.json'):
+                        os.remove('config.json')
+                        time.sleep(0.5)
+                    wget.download(url_cfg_up, 'config.json')
+        else:
+            if settings['autoupdate_conf'] == 'yes':
+                print(f"{qe}42m======================= " + t("upload_conf") + " =======================")
+                if os.path.exists('config.json'):
+                    os.remove('config.json')
+                    time.sleep(0.5)
+                wget.download(url_cfg_up, 'config.json')
+            time.sleep(1)
+        print('\n' + f"{qe}42m" + t("launch_script"))
+        offline_install_programs()
+        with open('config.json', 'r') as f:
+            content = f.read()
+            config = json.loads(content)
     elif sys.argv[1] == '-noUpdate':
         print(f"{qe}42m" + t("off_update"))
         try:
@@ -389,6 +465,16 @@ if len(sys.argv) > 1:
         print('\n' + f"{qe}42m" + t("launch_script"))            
         time.sleep(1)
         menu()
+    else:
+        argument_wrong = ''
+        for item in sys.argv[1::]:
+            argument_wrong = f'{argument_wrong} {item}'
+        print(f"{qe}41m" + t("wrong_argument") + argument_wrong)
+        print(f"{qe}41m" + t("wrong_argument0"))
+        try:
+            exit()
+        except SystemExit:
+            ...
 elif len(sys.argv) == 1:
     if settings['autoupdate_conf'] == 'yes':
         print(f"{qe}42m" + "======================= " + t("upload_conf") + " =======================")
