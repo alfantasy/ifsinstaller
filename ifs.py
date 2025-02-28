@@ -24,7 +24,7 @@ else:
         content_translate = f.read()
         data_translation = json.loads(content_translate)    
 
-os.system("cls")
+#os.system("cls")
 
 def t(key):
     lang = settings['language']
@@ -398,15 +398,15 @@ def menu():
             menu()
 
 if len(sys.argv) > 1:
-    if sys.argv[1] == '-h' or sys.argv[1] == '-help':
+    if sys.argv[1] == '-h' or sys.argv[1] == '-help' or sys.argv[1] == "--h" or sys.argv[1] == '--help':
         print(t("help_console"))
         try:
             exit()
         except SystemExit:
             ... 
-    elif sys.argv[1] == '-oInstall':
+    elif sys.argv[1] == '--oInstall':
         if len(sys.argv) == 3:
-            if sys.argv[2] == '-noUpdate':
+            if sys.argv[2] == '--noUpdate':
                 print(f"{qe}42m" + t("off_update"))
             else:
                 if settings['autoupdate_conf'] == 'yes':
@@ -428,9 +428,9 @@ if len(sys.argv) > 1:
         with open('config.json', 'r') as f:
             content = f.read()
             config = json.loads(content)
-    elif sys.argv[1] == '-ofInstall':
+    elif sys.argv[1] == '--ofInstall':
         if len(sys.argv) == 3:
-            if sys.argv[2] == '-noUpdate':
+            if sys.argv[2] == '--noUpdate':
                 print(f"{qe}42m" + t("off_update"))
             else:
                 if settings['autoupdate_conf'] == 'yes':
@@ -452,7 +452,7 @@ if len(sys.argv) > 1:
         with open('config.json', 'r') as f:
             content = f.read()
             config = json.loads(content)
-    elif sys.argv[1] == '-noUpdate':
+    elif sys.argv[1] == '--noUpdate':
         print(f"{qe}42m" + t("off_update"))
         try:
             print('\033[42m======================= ' + t("load_config") + ' =======================')
