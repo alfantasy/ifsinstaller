@@ -12,6 +12,16 @@
             "name": "Firefox", 
             "url": "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=ru", 
             "silentArgs": "/silent"
+          },
+          {
+            "name": "Yandex",
+            "url": "https://browser.yandex.ru/download/?full=1",
+            "silentArgs": "/None"
+          },
+          {
+            "name": "Opera GX",
+            "url": "https://net.geo.opera.com/opera_gx/stable/windows",
+            "silentArgs": "/None"
           }
         ], 
       "text_editor": 
@@ -25,6 +35,16 @@
             "name": "Notepad++ 8.6.7", 
             "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.6.7/npp.8.6.7.Installer.x64.exe", 
             "silentArgs": "/S"
+          },
+          {
+            "name": "LibreOffice 25.2.1",
+            "url": "https://www.libreoffice.org/donate/dl/win-x86_64/25.2.1/en-US/LibreOffice_25.2.1_Win_x86-64.msi",
+            "silentArgs": "None"
+          },
+          {
+            "name": "Atom 1.60.0",
+            "url": "https://github.com/atom/atom/releases/download/v1.60.0/AtomSetup-x64.exe",
+            "silentArgs": "/None"
           }
         ], 
       "media_player": 
